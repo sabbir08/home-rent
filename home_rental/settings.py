@@ -127,12 +127,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR,'home_rental/static'
+    BASE_DIR / 'home_rental/static'
 ]
 
 
 # Media Folder Settings
-MEDIA_ROOT = BASE_DIR, 'media'
+MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {

@@ -11,8 +11,13 @@ def contact(request):
         email = request.POST['email']
         phone = request.POST['phone']
         message = request.POST['message']
-        user_id = request.POST['user_id']
-        realtor_email = request.POST['realtor_email']
+        nid = request.POST['nid']
+        dob = request.POST['dob']
+        nationality = request.POST['nationality']
+        parmanent_address = request.POST['parmanent_address']
+        bkash_number = request.POST['bkash_number']
+        trxid = request.POST['trxid']
+        # realtor_email = request.POST['realtor_email']
 
     #  Check if user has made inquiry already
         if request.user.is_authenticated:
@@ -22,7 +27,9 @@ def contact(request):
                 messages.error(request, 'You have already made an inquiry for this listing')
                 return redirect('/listings/'+listing_id)
 
-        contact = Contact(listing=listing, listing_id=listing_id, name=name, email=email, phone=phone, message=message, user_id=user_id )
+        contact = Contact(listing=listing, listing_id=listing_id, name=name, email=email, phone=phone, 
+        message=message, user_id=user_id, nid=nid, dob=dob, nationality=nationality, parmanent_address=parmanent_address, 
+        bkash_number=bkash_number, trxid=trxid)
 
         contact.save()
 
